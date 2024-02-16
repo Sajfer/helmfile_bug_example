@@ -1,0 +1,2 @@
+service:
+  loadBalancerIP: {{ tpl .Values.service.ip . | fetchSecretValue }}

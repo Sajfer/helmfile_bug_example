@@ -1,0 +1,20 @@
+bases:
+  - common/environments.yaml
+
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+
+templates:
+  bitnami: &bitnami
+    chart: bitnami/{{`{{ .Release.Name }}`}}
+    namespace: "{{`{{ .Release.Name }}`}}"
+    missingFileHandler: Warn
+    values:
+    - config/{{`{{ .Release.Name }}`}}/values.yaml
+    - config/{{`{{ .Release.Name }}`}}/values.yaml.gotmpl
+
+releases:
+  - name: haproxy
+    version: 0.14.3
+    <<: *bitnami

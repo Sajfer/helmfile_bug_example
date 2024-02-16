@@ -1,0 +1,5 @@
+environments:
+  default:
+    values:
+    - common/common.yaml
+    - common/default.yaml

@@ -1,0 +1,2 @@
+service:
+  ip: "ref+tfstategs://helmfile_example_tfstate/default.tfstate/google_compute_address.internal-ips[\"address-2\"].address"
